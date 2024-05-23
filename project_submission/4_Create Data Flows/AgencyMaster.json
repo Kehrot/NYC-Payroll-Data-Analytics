@@ -1,0 +1,54 @@
+{
+    "name": "AgencyMaster",
+    "properties": {
+        "type": "MappingDataFlow",
+        "typeProperties": {
+            "sources": [
+                {
+                    "dataset": {
+                        "referenceName": "ds_sa_AgencyMaster",
+                        "type": "DatasetReference"
+                    },
+                    "name": "saAgencyMaster"
+                }
+            ],
+            "sinks": [
+                {
+                    "dataset": {
+                        "referenceName": "ds_sqlserver_NYC_Payroll_AGENCY_MD",
+                        "type": "DatasetReference"
+                    },
+                    "name": "dbAgencyMaster"
+                }
+            ],
+            "transformations": [],
+            "scriptLines": [
+                "source(output(",
+                "          AgencyID as string,",
+                "          AgencyName as string",
+                "     ),",
+                "     allowSchemaDrift: true,",
+                "     validateSchema: false,",
+                "     ignoreNoFilesFound: false) ~> saAgencyMaster",
+                "saAgencyMaster sink(allowSchemaDrift: true,",
+                "     validateSchema: false,",
+                "     input(",
+                "          AgencyID as string,",
+                "          AgencyName as string",
+                "     ),",
+                "     deletable:false,",
+                "     insertable:true,",
+                "     updateable:false,",
+                "     upsertable:false,",
+                "     format: 'table',",
+                "     skipDuplicateMapInputs: true,",
+                "     skipDuplicateMapOutputs: true,",
+                "     errorHandlingOption: 'stopOnFirstError',",
+                "     mapColumn(",
+                "          AgencyID,",
+                "          AgencyName",
+                "     )) ~> dbAgencyMaster"
+            ]
+        }
+    }
+}

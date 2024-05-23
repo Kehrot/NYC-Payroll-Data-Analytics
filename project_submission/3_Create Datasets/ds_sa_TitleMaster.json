@@ -1,0 +1,33 @@
+{
+    "name": "ds_sa_TitleMaster",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "ls_sa259615",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobFSLocation",
+                "fileName": "TitleMaster.csv",
+                "folderPath": "dirpayrollfiles",
+                "fileSystem": "adlsnycpayroll-hector-am"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": [
+            {
+                "name": "TitleCode",
+                "type": "String"
+            },
+            {
+                "name": "TitleDescription",
+                "type": "String"
+            }
+        ]
+    }
+}
