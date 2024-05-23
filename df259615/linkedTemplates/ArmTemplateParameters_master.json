@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "df259615"
+		},
+		"ls_sa259615_accountKey": {
+			"value": ""
+		},
+		"ls_sqlserver259615_connectionString": {
+			"value": ""
+		},
+		"ls_synapsesa259615_accountKey": {
+			"value": ""
+		},
+		"ls_sa259615_properties_typeProperties_url": {
+			"value": "https://sa259615.dfs.core.windows.net/"
+		},
+		"ls_synapsesa259615_properties_typeProperties_url": {
+			"value": "https://synapsesa259615.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

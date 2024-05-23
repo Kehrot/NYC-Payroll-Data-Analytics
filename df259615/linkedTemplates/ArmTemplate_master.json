@@ -1,0 +1,97 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "df259615"
+		},
+		"ls_sa259615_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_sa259615'"
+		},
+		"ls_sqlserver259615_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_sqlserver259615'"
+		},
+		"ls_synapsesa259615_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_synapsesa259615'"
+		},
+		"ls_sa259615_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sa259615.dfs.core.windows.net/"
+		},
+		"ls_synapsesa259615_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://synapsesa259615.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "df259615_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_sa259615_accountKey": {
+						"value": "[parameters('ls_sa259615_accountKey')]"
+					},
+					"ls_sqlserver259615_connectionString": {
+						"value": "[parameters('ls_sqlserver259615_connectionString')]"
+					},
+					"ls_synapsesa259615_accountKey": {
+						"value": "[parameters('ls_synapsesa259615_accountKey')]"
+					},
+					"ls_sa259615_properties_typeProperties_url": {
+						"value": "[parameters('ls_sa259615_properties_typeProperties_url')]"
+					},
+					"ls_synapsesa259615_properties_typeProperties_url": {
+						"value": "[parameters('ls_synapsesa259615_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "df259615_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'df259615_ArmTemplate_0')]"
+			]
+		}
+	]
+}
