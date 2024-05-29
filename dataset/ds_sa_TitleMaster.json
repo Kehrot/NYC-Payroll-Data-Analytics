@@ -2,7 +2,7 @@
 	"name": "ds_sa_TitleMaster",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_sa259615",
+			"referenceName": "ls_sa259855",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "TitleMaster.csv",
+				"fileName": "nycpayroll_2021.csv",
 				"folderPath": "dirpayrollfiles",
 				"fileSystem": "adlsnycpayroll-hector-am"
 			},
@@ -21,11 +21,79 @@
 		},
 		"schema": [
 			{
+				"name": "FiscalYear",
+				"type": "String"
+			},
+			{
+				"name": "PayrollNumber",
+				"type": "String"
+			},
+			{
+				"name": "AgencyCode",
+				"type": "String"
+			},
+			{
+				"name": "AgencyName",
+				"type": "String"
+			},
+			{
+				"name": "EmployeeID",
+				"type": "String"
+			},
+			{
+				"name": "LastName",
+				"type": "String"
+			},
+			{
+				"name": "FirstName",
+				"type": "String"
+			},
+			{
+				"name": "AgencyStartDate",
+				"type": "String"
+			},
+			{
+				"name": "WorkLocationBorough",
+				"type": "String"
+			},
+			{
 				"name": "TitleCode",
 				"type": "String"
 			},
 			{
 				"name": "TitleDescription",
+				"type": "String"
+			},
+			{
+				"name": "LeaveStatusasofJune30",
+				"type": "String"
+			},
+			{
+				"name": "BaseSalary",
+				"type": "String"
+			},
+			{
+				"name": "PayBasis",
+				"type": "String"
+			},
+			{
+				"name": "RegularHours",
+				"type": "String"
+			},
+			{
+				"name": "RegularGrossPaid",
+				"type": "String"
+			},
+			{
+				"name": "OTHours",
+				"type": "String"
+			},
+			{
+				"name": "TotalOTPaid",
+				"type": "String"
+			},
+			{
+				"name": "TotalOtherPay",
 				"type": "String"
 			}
 		]

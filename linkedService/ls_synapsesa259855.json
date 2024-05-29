@@ -1,0 +1,12 @@
+{
+	"name": "ls_synapsesa259855",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://synapsesa259855.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEUxRDUxMUYwLTI3NEItNENBNC05RjY5LUJFMTRFN0Y0MzcwM19mODA1NDI2YS0wODFlLTQ2MTctYjFiYi0yMzViZGIwN2E2ODkiDQp9"
+		}
+	}
+}

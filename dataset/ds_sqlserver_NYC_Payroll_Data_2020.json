@@ -2,7 +2,7 @@
 	"name": "ds_sqlserver_NYC_Payroll_Data_2020",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_sqlserver259615",
+			"referenceName": "ls_sqlserver259855",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],

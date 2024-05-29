@@ -2,7 +2,7 @@
 	"name": "ds_sa_nycpayroll_2020",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_sa259615",
+			"referenceName": "ls_sa259855",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],

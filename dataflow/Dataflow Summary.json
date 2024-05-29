@@ -29,7 +29,7 @@
 				},
 				{
 					"dataset": {
-						"referenceName": "ds_sa_dirstaging",
+						"referenceName": "ds_sa_NYC_Payroll_Summary",
 						"type": "DatasetReference"
 					},
 					"name": "synapsePayrollSummary"

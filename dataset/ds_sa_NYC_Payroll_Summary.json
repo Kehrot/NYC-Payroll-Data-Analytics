@@ -1,8 +1,8 @@
 {
-	"name": "ds_sa_AgencyMaster",
+	"name": "ds_sa_NYC_Payroll_Summary",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_sa259855",
+			"referenceName": "ls_synapsesa259855",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,25 +10,15 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "AgencyMaster.csv",
-				"folderPath": "dirpayrollfiles",
-				"fileSystem": "adlsnycpayroll-hector-am"
+				"folderPath": "NYC_Payroll_Summary",
+				"fileSystem": "synapsefs259855"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
-			"firstRowAsHeader": true,
+			"firstRowAsHeader": false,
 			"quoteChar": "\""
 		},
-		"schema": [
-			{
-				"name": "AgencyID",
-				"type": "String"
-			},
-			{
-				"name": "AgencyName",
-				"type": "String"
-			}
-		]
+		"schema": []
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
